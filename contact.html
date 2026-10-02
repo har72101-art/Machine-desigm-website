@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | MechNex Design Consultancy</title>
+    <meta name="description" content="Contact MechNex Design Consultancy for machine design, fixture design, spare parts development, and design consultation." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container navbar">
+        <a href="index.html" class="brand" aria-label="MechNex home">
+          <span class="brand-mark">M</span>
+          <span>MechNex</span>
+        </a>
+
+        <button class="mobile-toggle" aria-label="Toggle menu">☰</button>
+
+        <nav aria-label="Main navigation">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="work.html">Our Work</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+          </ul>
+        </nav>
+
+        <a href="contact.html" class="nav-btn">Request Quote</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container page-title reveal">
+          <span class="eyebrow">Get in Touch</span>
+          <h1>Tell us about your <span class="gradient-text">machine design</span> requirement.</h1>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container contact-grid reveal">
+          <aside class="contact-card">
+            <h3>MechNex Design Consultancy</h3>
+            <div class="contact-item">
+              <strong>Location</strong>
+              <span>Sanjay Colony, Sector 23, Faridabad, Haryana 121005</span>
+            </div>
+            <div class="contact-item">
+              <strong>Email</strong>
+              <a href="mailto:sac72101@gmail.com">sac72101@gmail.com</a>
+            </div>
+            <div class="contact-item">
+              <strong>Phone</strong>
+              <a href="tel:+919971065806">+91 99710 65806</a>
+            </div>
+            <div class="contact-item">
+              <strong>WhatsApp</strong>
+              <a href="https://wa.me/917982611414" target="_blank" rel="noopener noreferrer">+91 79826 11414</a>
+            </div>
+            <div class="contact-item">
+              <strong>Working Hours</strong>
+              <span>Mon - Sat | 9:00 AM - 7:00 PM</span>
+            </div>
+          </aside>
+
+          <div class="contact-form">
+            <h3>Send your query</h3>
+            <form>
+              <div class="form-grid">
+                <div class="field-row">
+                  <div class="field">
+                    <label for="name">Full Name</label>
+                    <input id="name" type="text" placeholder="Your name" />
+                  </div>
+                  <div class="field">
+                    <label for="company">Company</label>
+                    <input id="company" type="text" placeholder="Company name" />
+                  </div>
+                </div>
+
+                <div class="field-row">
+                  <div class="field">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" placeholder="you@example.com" />
+                  </div>
+                  <div class="field">
+                    <label for="service">Service Needed</label>
+                    <select id="service">
+                      <option>Fixture Design</option>
+                      <option>Spare Parts Design</option>
+                      <option>Full Machine Design</option>
+                      <option>Automation Support</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="message">Project Details</label>
+                  <textarea id="message" placeholder="Describe your machine requirement, current challenge, and expected result..."></textarea>
+                    <div class="voice-controls">
+                      <select class="voice-language" aria-label="Voice input language">
+                        <option value="en-IN">English</option>
+                        <option value="hi-IN">Hindi</option>
+                      </select>
+                      <button class="voice-input-btn" type="button" aria-controls="message" aria-pressed="false">Start voice input</button>
+                      <span class="voice-status" aria-live="polite"></span>
+                    </div>
+                </div>
+
+                <button type="submit" class="primary-btn submit-btn">Submit Query</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-row">
+        <div class="brand">
+          <span class="brand-mark">M</span>
+          <span>MechNex Design Consultancy</span>
+        </div>
+        <div>© <span id="year"></span> MechNex. All rights reserved.</div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

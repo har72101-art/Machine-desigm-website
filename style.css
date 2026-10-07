@@ -511,12 +511,44 @@ h2 {
 
 .project-card {
   overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(78, 203, 255, 0.45);
+}
+
+.project-image-wrap {
+  position: relative;
+  overflow: hidden;
 }
 
 .project-card img {
   width: 100%;
   height: 240px;
   object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.04);
+}
+
+.project-tag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(5, 22, 34, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
 }
 
 .project-card-body {
@@ -526,6 +558,48 @@ h2 {
 .project-card h3 {
   margin: 0 0 10px;
   font-size: 1.4rem;
+}
+
+.project-result {
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--primary-2);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.work-impact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.impact-card {
+  padding: 26px 22px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(18, 36, 54, 0.96), rgba(9, 18, 28, 0.98));
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.15);
+}
+
+.impact-number {
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.impact-card h3 {
+  margin: 18px 0 10px;
+  font-size: 1.2rem;
+}
+
+.impact-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
 }
 
 .stats-grid {
@@ -791,7 +865,7 @@ footer {
   .contact-grid,
   .feature-showcase,
   .solution-grid { grid-template-columns: 1fr; }
-  .service-grid, .project-grid, .stats-grid, .capability-grid, .process-grid, .value-grid, .timeline-grid, .benefit-grid, .testimonial-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .service-grid, .project-grid, .stats-grid, .capability-grid, .process-grid, .value-grid, .timeline-grid, .benefit-grid, .testimonial-grid, .work-impact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 760px) {
@@ -815,7 +889,7 @@ footer {
   .nav-btn { display: none; }
   .nav-links.open { display: flex; }
   .mobile-toggle { display: grid; place-items: center; }
-  .service-grid, .project-grid, .stats-grid, .capability-grid, .process-grid, .value-grid, .timeline-grid, .benefit-grid, .testimonial-grid, .field-row { grid-template-columns: 1fr; }
+  .service-grid, .project-grid, .stats-grid, .capability-grid, .process-grid, .value-grid, .timeline-grid, .benefit-grid, .testimonial-grid, .work-impact-grid, .field-row { grid-template-columns: 1fr; }
   .hero { padding-top: 60px; }
   .hero-grid, .about-grid, .contact-grid, .feature-showcase { grid-template-columns: 1fr; }
   .hero-actions { flex-direction: column; }

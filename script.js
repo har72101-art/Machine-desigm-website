@@ -90,12 +90,56 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  const form = document.querySelector('form');
-  if (form) {
-    form.addEventListener('submit', (event) => {
+  document.querySelectorAll('.contact-form form').forEach((form) => {
+    form.addEventListener('submit', async (event) => {
       event.preventDefault();
-      alert('Thank you! Your inquiry has been submitted successfully.');
-      form.reset();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const formData = new FormData(form);
+      const payload = {
+        name: formData.get('name')?.toString().trim() || 'Not provided',
+        company: formData.get('company')?.toString().trim() || 'Not provided',
+        email: formData.get('email')?.toString().trim() || 'Not provided',
+        service: formData.get('service')?.toString().trim() || 'Not provided',
+        message: formData.get('message')?.toString().trim() || 'No project details provided',
+        _subject: `New machine design query from ${formData.get('name') || 'customer'}`
+      };
+
+      const submitButton = form.querySelector('button[type="submit"]');
+      const originalText = submitButton ? submitButton.textContent : 'Submit Query';
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+      }
+
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/sac72101@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+          throw new Error('Request failed');
+        }
+
+        alert('Thank you! Your inquiry has been submitted successfully.');
+        form.reset();
+      } catch (error) {
+        alert('There was a problem sending your message. Please email sac72101@gmail.com directly.');
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = originalText;
+        }
+      }
     });
-  }
+  });
 });

@@ -70,27 +70,27 @@
 
           <div class="contact-form">
             <h3>Send your query</h3>
-            <form>
+            <form id="contact-form-page" data-form-type="page">
               <div class="form-grid">
                 <div class="field-row">
                   <div class="field">
                     <label for="name">Full Name</label>
-                    <input id="name" type="text" placeholder="Your name" />
+                    <input id="name" name="name" type="text" placeholder="Your name" required />
                   </div>
                   <div class="field">
                     <label for="company">Company</label>
-                    <input id="company" type="text" placeholder="Company name" />
+                    <input id="company" name="company" type="text" placeholder="Company name" />
                   </div>
                 </div>
 
                 <div class="field-row">
                   <div class="field">
                     <label for="email">Email</label>
-                    <input id="email" type="email" placeholder="you@example.com" />
+                    <input id="email" name="email" type="email" placeholder="you@example.com" required />
                   </div>
                   <div class="field">
                     <label for="service">Service Needed</label>
-                    <select id="service">
+                    <select id="service" name="service">
                       <option>Fixture Design</option>
                       <option>Spare Parts Design</option>
                       <option>Full Machine Design</option>
@@ -101,7 +101,7 @@
 
                 <div class="field">
                   <label for="message">Project Details</label>
-                  <textarea id="message" placeholder="Describe your machine requirement, current challenge, and expected result..."></textarea>
+                  <textarea id="message" name="message" placeholder="Describe your machine requirement, current challenge, and expected result..." required></textarea>
                     <div class="voice-controls">
                       <select class="voice-language" aria-label="Voice input language">
                         <option value="en-IN">English</option>

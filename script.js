@@ -25,6 +25,117 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
 
+  const portfolioTabs = document.querySelectorAll('.portfolio-tab');
+  const portfolioPanels = document.querySelectorAll('.portfolio-panel');
+
+  portfolioTabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.target;
+
+      portfolioTabs.forEach((item) => item.classList.toggle('active', item === tab));
+      portfolioPanels.forEach((panel) => {
+        panel.classList.toggle('active', panel.id === `${target}-panel`);
+      });
+    });
+  });
+
+  const initGallery = (gallery) => {
+    const slides = Array.from(gallery.querySelectorAll('.gallery-slide'));
+    const dotsWrap = gallery.querySelector('.gallery-dots');
+    const prevButton = gallery.querySelector('.prev');
+    const nextButton = gallery.querySelector('.next');
+    const interval = Number(gallery.dataset.interval || 2000);
+
+    if (!slides.length) return;
+
+    let activeIndex = 0;
+    let timer = null;
+
+    const renderDots = () => {
+      if (!dotsWrap) return;
+      dotsWrap.innerHTML = '';
+      slides.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = `gallery-dot${index === activeIndex ? ' is-active' : ''}`;
+        dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+        dot.addEventListener('click', () => {
+          activeIndex = index;
+          showSlide();
+          restartTimer();
+        });
+        dotsWrap.appendChild(dot);
+      });
+    };
+
+    const showSlide = () => {
+      slides.forEach((slide, index) => {
+        slide.classList.toggle('is-active', index === activeIndex);
+      });
+      renderDots();
+    };
+
+    const nextSlide = () => {
+      activeIndex = (activeIndex + 1) % slides.length;
+      showSlide();
+    };
+
+    const previousSlide = () => {
+      activeIndex = (activeIndex - 1 + slides.length) % slides.length;
+      showSlide();
+    };
+
+    const stopTimer = () => {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      }
+    };
+
+    const startTimer = () => {
+      if (slides.length < 2) return;
+      stopTimer();
+      timer = setInterval(nextSlide, interval);
+    };
+
+    const restartTimer = () => {
+      startTimer();
+    };
+
+    if (prevButton) {
+      prevButton.addEventListener('click', () => {
+        previousSlide();
+        restartTimer();
+      });
+    }
+
+    if (nextButton) {
+      nextButton.addEventListener('click', () => {
+        nextSlide();
+        restartTimer();
+      });
+    }
+
+    gallery.addEventListener('mouseenter', stopTimer);
+    gallery.addEventListener('mouseleave', startTimer);
+    gallery.addEventListener('focusin', stopTimer);
+    gallery.addEventListener('focusout', startTimer);
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stopTimer(); else startTimer();
+    });
+
+    if (slides.length === 1) {
+      if (prevButton) prevButton.style.display = 'none';
+      if (nextButton) nextButton.style.display = 'none';
+      if (dotsWrap) dotsWrap.style.display = 'none';
+    }
+
+    showSlide();
+    startTimer();
+  };
+
+  document.querySelectorAll('.portfolio-gallery').forEach(initGallery);
+
   document.querySelectorAll('.voice-input-btn').forEach((button) => {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const field = document.getElementById(button.getAttribute('aria-controls'));
@@ -33,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!SpeechRecognition || !field) {
       button.disabled = true;
-      status.textContent = 'Voice input is not supported in this browser.';
+      if (status) status.textContent = 'Voice input is not supported in this browser.';
       return;
     }
 
@@ -86,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
     recognition.addEventListener('end', () => {
       button.textContent = 'Start voice input';
       button.setAttribute('aria-pressed', 'false');
-      if (status.textContent === 'Listening...') status.textContent = '';
+      if (status && status.textContent === 'Listening...') status.textContent = '';
     });
   });
 

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100">
+  <rect width="1600" height="1100" fill="#edf2f4"/>
+  <rect x="180" y="200" width="1240" height="700" rx="16" fill="#dfe9ee" stroke="#4d6975" stroke-width="4"/>
+  <rect x="260" y="290" width="620" height="520" rx="12" fill="#f8fbfc" stroke="#446779" stroke-width="4"/>
+  <rect x="980" y="290" width="340" height="520" rx="12" fill="#e8eef1" stroke="#446779" stroke-width="4"/>
+  <path d="M340 620 C520 480, 760 470, 920 620" stroke="#3f5f6d" stroke-width="10" fill="none"/>
+  <circle cx="410" cy="520" r="42" fill="#b1c0c8" stroke="#3f5f6d" stroke-width="5"/>
+  <circle cx="1060" cy="520" r="52" fill="#b9c6cd" stroke="#3f5f6d" stroke-width="5"/>
+  <text x="800" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="52" font-weight="700" fill="#23465d">Machine concept view</text>
+  <text x="800" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" fill="#536872">Replace this placeholder with the actual project image.</text>
+</svg>

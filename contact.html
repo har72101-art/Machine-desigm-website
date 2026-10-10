@@ -69,50 +69,61 @@
           </aside>
 
           <div class="contact-form">
-            <h3>Send your query</h3>
+            <div class="contact-form-header">
+              <span class="section-kicker">Project Enquiry</span>
+              <h2>Request a Quote</h2>
+              <p>Tell us about your engineering requirements. Our team will review your enquiry.</p>
+            </div>
             <form id="contact-form-page" data-form-type="page">
               <div class="form-grid">
                 <div class="field-row">
                   <div class="field">
                     <label for="name">Full Name</label>
-                    <input id="name" name="name" type="text" placeholder="Your name" required />
+                    <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required />
                   </div>
                   <div class="field">
-                    <label for="company">Company</label>
-                    <input id="company" name="company" type="text" placeholder="Company name" />
+                    <label for="company">Company Name</label>
+                    <input id="company" name="company" type="text" placeholder="Company name" autocomplete="organization" />
                   </div>
                 </div>
 
-                <div class="field-row">
-                  <div class="field">
-                    <label for="email">Email</label>
-                    <input id="email" name="email" type="email" placeholder="you@example.com" required />
-                  </div>
-                  <div class="field">
-                    <label for="service">Service Needed</label>
-                    <select id="service" name="service">
-                      <option>Fixture Design</option>
-                      <option>Spare Parts Design</option>
-                      <option>Full Machine Design</option>
-                      <option>Automation Support</option>
-                    </select>
-                  </div>
+                <div class="field">
+                  <label for="email">Email Address</label>
+                  <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+                </div>
+
+                <div class="field">
+                  <label for="service">Service Needed</label>
+                  <select id="service" name="service">
+                    <option>Fixture Design</option>
+                    <option>Spare Parts Design</option>
+                    <option>Full Machine Design</option>
+                    <option>Automation Support</option>
+                    <option>Mining Machinery Design</option>
+                    <option>Industrial Machinery Design</option>
+                    <option>Mechanical Engineering Design</option>
+                    <option>Woodworking Machinery Design</option>
+                    <option>Automatic Woodworking Machinery</option>
+                    <option>Industrial Equipment Design</option>
+                    <option>Customized Engineering Design</option>
+                    <option>Other Industrial Design Requirements</option>
+                  </select>
                 </div>
 
                 <div class="field">
                   <label for="message">Project Details</label>
                   <textarea id="message" name="message" placeholder="Describe your machine requirement, current challenge, and expected result..." required></textarea>
-                    <div class="voice-controls">
-                      <select class="voice-language" aria-label="Voice input language">
-                        <option value="en-IN">English</option>
-                        <option value="hi-IN">Hindi</option>
-                      </select>
-                      <button class="voice-input-btn" type="button" aria-controls="message" aria-pressed="false">Start voice input</button>
-                      <span class="voice-status" aria-live="polite"></span>
-                    </div>
+                  <div class="voice-controls">
+                    <select class="voice-language" aria-label="Voice input language">
+                      <option value="en-IN">English</option>
+                      <option value="hi-IN">Hindi</option>
+                    </select>
+                    <button class="voice-input-btn" type="button" aria-controls="message" aria-pressed="false">Start voice input</button>
+                    <span class="voice-status" aria-live="polite"></span>
+                  </div>
                 </div>
 
-                <button type="submit" class="primary-btn submit-btn">Submit Query</button>
+                <button type="submit" class="primary-btn submit-btn">Submit Enquiry</button>
               </div>
             </form>
           </div>

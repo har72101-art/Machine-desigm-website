@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100">
+  <rect width="1600" height="1100" fill="#eef3f5"/>
+  <rect x="110" y="170" width="1380" height="760" rx="18" fill="#dfe7ea" stroke="#61727d" stroke-width="4"/>
+  <rect x="260" y="260" width="1040" height="540" rx="12" fill="#f8fbfc" stroke="#4a6773" stroke-width="4"/>
+  <rect x="450" y="360" width="700" height="320" rx="14" fill="#d7e0e6" stroke="#4a6773" stroke-width="4"/>
+  <rect x="520" y="420" width="560" height="200" rx="12" fill="#edf3f5" stroke="#4a6773" stroke-width="4"/>
+  <path d="M520 520 H1080" stroke="#4a6773" stroke-width="8"/>
+  <path d="M700 420 V620" stroke="#4a6773" stroke-width="8"/>
+  <path d="M900 420 V620" stroke="#4a6773" stroke-width="8"/>
+  <text x="800" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="52" font-weight="700" fill="#23465d">Industrial equipment project</text>
+  <text x="800" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" fill="#536872">Insert the real project image here when available.</text>
+</svg>
